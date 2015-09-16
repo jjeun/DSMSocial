@@ -14,8 +14,8 @@ import com.astuetz.PagerSlidingTabStrip;
 public class MainPage extends FragmentActivity {
 
     public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-        final int PAGE_COUNT = 3;
-        private String tabTitles[] = new String[] { "Main Menu", "Artist", "Shop" };
+        final int PAGE_COUNT = 4;
+        private String tabTitles[] = new String[] { "Main Menu", "Artist", "Shop", "About"};
 
         public SampleFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -28,7 +28,19 @@ public class MainPage extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return MainPageFragment.newInstance(position + 1);
+
+            switch (position) {
+                case 0:
+                    return MainPageFragment.newInstance(position + 1);
+                case 1:
+                    return ArtistFragment.newInstance(position + 1);
+                case 2:
+                    return ShopFragment.newInstance(position + 1);
+                case 3:
+                    return AboutFragment.newInstance(position + 1);
+                default:
+                    return null;
+            }
         }
 
         @Override

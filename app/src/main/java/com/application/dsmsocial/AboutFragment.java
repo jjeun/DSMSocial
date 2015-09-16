@@ -11,15 +11,15 @@ import android.widget.TextView;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainPageFragment extends Fragment {
+public class AboutFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private int mPage;
 
-    public static MainPageFragment newInstance(int page) {
+    public static AboutFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        MainPageFragment fragment = new MainPageFragment();
+        AboutFragment fragment = new AboutFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -34,7 +34,9 @@ public class MainPageFragment extends Fragment {
     // Set the associated text for the title
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main_page, container, false);
+        return inflater.inflate(R.layout.fragment_about, container, false);
 
     }
 }
+
+
