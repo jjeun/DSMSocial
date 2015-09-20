@@ -1,12 +1,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="@string/hello_blank_fragment1"
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:id="@+id/mainViewFlipper"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp">
+    </ViewFlipper>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="116dp"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageButton"
+            android:src="@drawable/dmsc"
+            android:background="@drawable/grid_color_selector"
+            android:layout_margin="15dp"
+            android:contentDescription="@string/mainButton"/>
+
+        <TextView
+            android:id="@+id/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:layout_margin="25dp"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+</ScrollView>
+
+
 </LinearLayout>

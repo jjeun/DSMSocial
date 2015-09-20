@@ -62,8 +62,7 @@ public class MainPage extends FragmentActivity {
 
         // Give the PagerSlidingTabStrip the ViewPager
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabsStrip.setTextColor(Color.parseColor("#FC6C85"));
-        tabsStrip.setTextSize(0b11001);
+
         // Attach the view pager to the tab strip
         tabsStrip.setViewPager(viewPager);
     }
