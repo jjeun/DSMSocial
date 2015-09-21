@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main_page">MainPage</string>
     <string name="mainButton">Artist Page</string>
+    <string name="featureArtist">Featured Artist</string>
 
     <!--<string name="title_section1">Section 1</string>-->
     <!--<string name="title_section2">Section 2</string>-->
@@ -95,4 +96,6 @@
     <string name="hello_fragment2">Viaduct Artist Page</string>
     <string name="hello_fragment3">Viaduct Shop</string>
     <string name="hello_blank_fragment4">About Us</string>
+    <string name="title_activity_artist">ArtistActivity</string>
+    <string name="title_activity_shop">ShopActivity</string>
 </resources>

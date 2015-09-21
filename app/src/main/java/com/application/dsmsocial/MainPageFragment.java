@@ -1,5 +1,6 @@
 package com.application.dsmsocial;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.support.v4.app.Fragment;
@@ -80,7 +81,10 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "main clicked");   // Log's that Max button was pressed.
+
                 // create method to activity
+                Intent intent = new Intent(getActivity(), ArtistActivity.class);
+                startActivity(intent);
             }
         });
 

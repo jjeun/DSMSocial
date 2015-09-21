@@ -20,6 +20,22 @@
             android:name=".MainPage"
             android:label="@string/title_activity_main_page" >
         </activity>
+        <activity
+            android:name=".ArtistActivity"
+            android:label="@string/title_activity_artist"
+            android:parentActivityName=".MainPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.MainPage" />
+        </activity>
+        <activity
+            android:name=".ShopActivity"
+            android:label="@string/title_activity_shop"
+            android:parentActivityName=".MainPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.MainPage" />
+        </activity>
     </application>
 
 </manifest>

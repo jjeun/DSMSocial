@@ -1,5 +1,6 @@
 package com.application.dsmsocial;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -55,7 +56,7 @@ public class ArtistFragment extends Fragment {
     // Set the associated text for the title
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_artist, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_artist, container, false);
 
         gridView = (GridView) rootView.findViewById(R.id.artistGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
@@ -64,7 +65,13 @@ public class ArtistFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Log.v(TAG, "artist clicked");
-                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+                ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
+
+                Intent intent = new Intent(getActivity(), ArtistActivity.class);
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("image", item.getImage());
+                intent.putExtra("switch", 1);
+                startActivity(intent);
             }
         });
 

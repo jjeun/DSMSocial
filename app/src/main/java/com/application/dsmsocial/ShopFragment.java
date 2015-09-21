@@ -1,5 +1,6 @@
 package com.application.dsmsocial;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -7,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +63,7 @@ public class ShopFragment extends Fragment {
     // Set the associated text for the title
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_shop, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_shop, container, false);
 
         gridView = (GridView) rootView.findViewById(R.id.shopGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
@@ -70,7 +72,12 @@ public class ShopFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Log.v(TAG, "shop clicked");
-                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+                ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
+
+                Intent intent = new Intent(getActivity(), ShopActivity.class);
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("image", item.getImage());
+                startActivity(intent);
             }
         });
 
