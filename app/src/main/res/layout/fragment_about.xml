@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     android:background="@color/darkBlue">
 
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:id="@+id/aboutViewFlipper"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp">
+    </ViewFlipper>
+
     <TextView
         android:id="@+id/tvTitle"
         android:text="@string/hello_blank_fragment4"
