@@ -20,6 +20,22 @@
         The Des Moines Social Club spans two buildings, multiple floors, an outdoor courtyard and features Viaduct Gallery, Kum \&amp; Go Theater, Malo Restaurant, and Capes Kafé, as well
         as numerous performance spaces, classrooms, and non-profit office space.</string>
 
+    <string name="aboutTitle">Viaduct Gallery</string>
+
+    <string name="aboutText">The Des Moines Social Club’s Viaduct Gallery, sponsored in part by Grand View University, is Des Moines’ newest visual art home; exhibiting works by emerging local, regional, national, and international artists.
+    Committed to supporting artists and creating opportunities to enhance the art scene in Des Moines, the Viaduct Gallery connects the community with progressive and dynamic art of all mediums.
+    The 1,800+ square foot space is located on the first floor of the Des Moines Social Club, adjacent to Capes Kafé and Malo Restaurant.</string>
+
+    <string name="aboutContactTitle">Contact Us</string>
+    <string name="aboutContact1">Want to submit your work?</string>
+    <string name="aboutContact2">Contact us at  info@desmoinessocialclub.org.</string>
+    <string name="aboutContact3">900 Mulberry Street</string>
+    <string name="aboutContact4">Des Moines, Iowa 50309</string>
+    <string name="aboutContact5">515-369-3672</string>
+
+
+
+
 
     <string-array name="shopImage">
         <item>@drawable/shop_item1</item>
