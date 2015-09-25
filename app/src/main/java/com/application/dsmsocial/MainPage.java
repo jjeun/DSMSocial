@@ -16,7 +16,7 @@ public class MainPage extends FragmentActivity {
 
     public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         final int PAGE_COUNT = 4;
-        private String tabTitles[] = new String[] { "Main", "Artist", "Shop", "About"};
+        private String tabTitles[] = new String[] { "Main Menu", "Artist", "Shop", "About"};
 
         public SampleFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
