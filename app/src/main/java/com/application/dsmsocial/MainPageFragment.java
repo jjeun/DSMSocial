@@ -34,11 +34,10 @@ public class MainPageFragment extends Fragment {
     int finalWidth;
 
     int[] resources = {
-            R.drawable.main_image1,
-            R.drawable.main_image2,
-            R.drawable.main_image3,
-            R.drawable.main_image4,
-            R.drawable.main_image5
+            R.drawable.slideshow1,
+            R.drawable.slideshow2,
+            R.drawable.slideshow3,
+            R.drawable.slideshow4,
     };
 
     public static MainPageFragment newInstance(int page) {
@@ -89,7 +88,6 @@ public class MainPageFragment extends Fragment {
         });
 
 
-
         final ViewTreeObserver vto = mainButton.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -97,50 +95,11 @@ public class MainPageFragment extends Fragment {
                 mainButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 finalHeight = mainButton.getMeasuredHeight();
                 finalWidth = mainButton.getMeasuredWidth();
-                makeSpan();
             }
         });
 
         return rootView;
 
     }
-
-
-    /**
-     * This method builds the text layout
-     */
-    private void makeSpan() {
-
-        /**
-         * Get the text
-         */
-        String plainText=getResources().getString(R.string.mainText);
-        Spanned htmlText = Html.fromHtml(plainText);
-        SpannableString mSpannableString= new SpannableString(htmlText);
-
-
-        int allTextStart = 0;
-        int allTextEnd = htmlText.length() - 1;
-
-        /**
-         * Calculate the lines number = image height.
-         * You can improve it... it is just an example
-         */
-        int lines;
-        Rect bounds = new Rect();
-        mainTextView.getPaint().getTextBounds(plainText.substring(0, 10), 0, 1, bounds);
-
-        //float textLineHeight = mTextView.getPaint().getTextSize();
-        float fontSpacing=mainTextView.getPaint().getFontSpacing();
-        lines = (int) (finalHeight/fontSpacing);
-
-        /**
-         * Build the layout with LeadingMarginSpan2
-         */
-        MyLeadingMarginSpan2 span = new MyLeadingMarginSpan2(lines, finalWidth +10 );
-        mSpannableString.setSpan(span, allTextStart, allTextEnd,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        mainTextView.setText(mSpannableString);
-    }
 }
+

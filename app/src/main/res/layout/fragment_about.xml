@@ -2,7 +2,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkBlue">
+    android:background="@color/mainBackground">
 
     <ViewFlipper
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_margin="10dp"
                 android:textSize="40sp"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/white"/>
+                android:textColor="@color/mainFont"/>
 
             <TextView
                 android:id="@+id/aboutText"
@@ -38,7 +38,7 @@
                 android:layout_margin="20dp"
                 android:textSize="25sp"
                 android:layout_below="@id/aboutTitle"
-                android:textColor="@color/white"/>
+                android:textColor="@color/mainFont"/>
 
         <LinearLayout
             android:id="@+id/mapLayout"
@@ -73,7 +73,7 @@
                     android:padding="5dp"
                     android:layout_margin="5dp"
                     android:textSize="20sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"/>
 
                 <TextView
                     android:id="@+id/aboutContact1"
@@ -83,7 +83,8 @@
                     android:layout_margin="0dp"
                     android:textSize="15sp"
                     android:layout_below="@id/aboutContactTitle"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"
+                    android:layout_marginLeft="5dp" />
 
                 <TextView
                     android:id="@+id/aboutContact2"
@@ -93,7 +94,8 @@
                     android:layout_margin="0dp"
                     android:textSize="15sp"
                     android:layout_below="@id/aboutContact1"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"
+                    android:layout_marginLeft="5dp" />
 
                 <TextView
                     android:id="@+id/aboutContact3"
@@ -103,7 +105,9 @@
                     android:layout_margin="0dp"
                     android:textSize="15sp"
                     android:layout_below="@id/aboutContact2"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp" />
 
                 <TextView
                     android:id="@+id/aboutContact4"
@@ -113,7 +117,8 @@
                     android:layout_margin="0dp"
                     android:textSize="15sp"
                     android:layout_below="@id/aboutContact3"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"
+                    android:layout_marginLeft="5dp" />
 
                 <TextView
                     android:id="@+id/aboutContact5"
@@ -123,7 +128,8 @@
                     android:layout_margin="0dp"
                     android:textSize="15sp"
                     android:layout_below="@id/aboutContact4"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/mainFont"
+                    android:layout_marginLeft="5dp" />
 
 
             </RelativeLayout>
@@ -140,5 +146,5 @@
         android:layout_height="116dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"/>
+        android:textColor="@color/mainFont"/>
 </LinearLayout>
