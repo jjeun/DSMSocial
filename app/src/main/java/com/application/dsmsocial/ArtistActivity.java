@@ -35,7 +35,7 @@ public class ArtistActivity extends AppCompatActivity {
             titleTextView.setText(R.string.featureArtist);
 
             ImageView imageView = (ImageView) findViewById(R.id.artistImage);
-            imageView.setImageResource(R.drawable.dmsc);
+            imageView.setImageResource(R.drawable.artist1);                 // image for button on main page
         }
     }
 

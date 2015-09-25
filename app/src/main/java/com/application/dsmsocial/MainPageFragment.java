@@ -33,12 +33,12 @@ public class MainPageFragment extends Fragment {
     int finalHeight;
     int finalWidth;
 
+    // array that will hold the images for the view flipper
     int[] resources = {
-            R.drawable.main_image1,
-            R.drawable.main_image2,
-            R.drawable.main_image3,
-            R.drawable.main_image4,
-            R.drawable.main_image5
+            R.drawable.slideshow1,
+            R.drawable.slideshow2,
+            R.drawable.slideshow3,
+            R.drawable.slideshow4,
     };
 
     public static MainPageFragment newInstance(int page) {
@@ -60,12 +60,12 @@ public class MainPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main_page, container, false);
 
-        // Get the ViewFlipper
+        // Getting the view flipper
         mViewFlipper = (ViewFlipper) rootView.findViewById(R.id.mainViewFlipper);
         mainButton = (ImageButton) rootView.findViewById(R.id.imageButton);
         mainTextView = (TextView) rootView.findViewById(R.id.mainText);
 
-        // Add all the images to the ViewFlipper
+        // Add all the images from the array above to the view flipper
         for (int resource : resources) {
             ImageView imageView = new ImageView(getActivity());
             imageView.setImageResource(resource);
@@ -73,14 +73,15 @@ public class MainPageFragment extends Fragment {
             mViewFlipper.addView(imageView);
         }
 
+        // setting view flipper to start automatically
         mViewFlipper.setAutoStart(true);
-        mViewFlipper.setFlipInterval(3000); //flip image every 3 seconds
+        mViewFlipper.setFlipInterval(3000); //flips image every 3 seconds
 
-
+        // logs that the image button has been pressed
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "main clicked");   // Log's that Max button was pressed.
+                Log.v(TAG, "main clicked");
 
                 // create method to activity
                 Intent intent = new Intent(getActivity(), ArtistActivity.class);
@@ -90,57 +91,57 @@ public class MainPageFragment extends Fragment {
 
 
 
-        final ViewTreeObserver vto = mainButton.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                mainButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                finalHeight = mainButton.getMeasuredHeight();
-                finalWidth = mainButton.getMeasuredWidth();
-                makeSpan();
-            }
-        });
+//        final ViewTreeObserver vto = mainButton.getViewTreeObserver();
+//        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                mainButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+//                finalHeight = mainButton.getMeasuredHeight();
+//                finalWidth = mainButton.getMeasuredWidth();
+//                makeSpan();
+//            }
+//        });
 
         return rootView;
 
     }
 
-
-    /**
-     * This method builds the text layout
-     */
-    private void makeSpan() {
-
-        /**
-         * Get the text
-         */
-        String plainText=getResources().getString(R.string.mainText);
-        Spanned htmlText = Html.fromHtml(plainText);
-        SpannableString mSpannableString= new SpannableString(htmlText);
-
-
-        int allTextStart = 0;
-        int allTextEnd = htmlText.length() - 1;
-
-        /**
-         * Calculate the lines number = image height.
-         * You can improve it... it is just an example
-         */
-        int lines;
-        Rect bounds = new Rect();
-        mainTextView.getPaint().getTextBounds(plainText.substring(0, 10), 0, 1, bounds);
-
-        //float textLineHeight = mTextView.getPaint().getTextSize();
-        float fontSpacing=mainTextView.getPaint().getFontSpacing();
-        lines = (int) (finalHeight/fontSpacing);
-
-        /**
-         * Build the layout with LeadingMarginSpan2
-         */
-        MyLeadingMarginSpan2 span = new MyLeadingMarginSpan2(lines, finalWidth +10 );
-        mSpannableString.setSpan(span, allTextStart, allTextEnd,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        mainTextView.setText(mSpannableString);
-    }
+//
+//    /**
+//     * This method builds the text layout
+//     */
+//    private void makeSpan() {
+//
+//        /**
+//         * Get the text
+//         */
+//        String plainText=getResources().getString(R.string.mainText);
+//        Spanned htmlText = Html.fromHtml(plainText);
+//        SpannableString mSpannableString= new SpannableString(htmlText);
+//
+//
+//        int allTextStart = 0;
+//        int allTextEnd = htmlText.length() - 1;
+//
+//        /**
+//         * Calculate the lines number = image height.
+//         * You can improve it... it is just an example
+//         */
+//        int lines;
+//        Rect bounds = new Rect();
+//        mainTextView.getPaint().getTextBounds(plainText.substring(0, 10), 0, 1, bounds);
+//
+//        //float textLineHeight = mTextView.getPaint().getTextSize();
+//        float fontSpacing=mainTextView.getPaint().getFontSpacing();
+//        lines = (int) (finalHeight/fontSpacing);
+//
+//        /**
+//         * Build the layout with LeadingMarginSpan2
+//         */
+//        MyLeadingMarginSpan2 span = new MyLeadingMarginSpan2(lines, finalWidth +10 );
+//        mSpannableString.setSpan(span, allTextStart, allTextEnd,
+//                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        mainTextView.setText(mSpannableString);
+//    }
 }

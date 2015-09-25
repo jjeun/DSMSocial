@@ -12,19 +12,19 @@
         app:pstsTextAllCaps="true"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/darkBlue"
+        android:background="@color/sliderBackground"
         android:textSize="20sp"
-        android:textColor="@color/pink"
-        app:pstsDividerColor="@color/white"
-        app:pstsIndicatorColor="@color/lightBlue"
-        app:pstsUnderlineColor="@color/white"
-        app:pstsTabPaddingLeftRight="14dp">>
+        android:textColor="@color/sliderFont"
+        app:pstsDividerColor="@color/sliderBackground"
+        app:pstsIndicatorColor="@color/tabIndicator"
+        app:pstsUnderlineColor="@color/black"
+        app:pstsTabPaddingLeftRight="14dp">
     </com.astuetz.PagerSlidingTabStrip>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white" />
+        android:background="@color/mainBackground" />
 
 </LinearLayout>
