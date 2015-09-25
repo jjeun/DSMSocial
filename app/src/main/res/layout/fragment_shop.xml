@@ -24,17 +24,6 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp" />
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="@string/hello_fragment3"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:background="@color/mainBackground"
-        android:layout_below="@+id/shopCartButton" />
 
     <GridView
         android:layout_width="wrap_content"
@@ -46,7 +35,7 @@
         android:padding="30dp"
         android:horizontalSpacing="20dp"
         android:verticalSpacing="20dp"
-        android:layout_below="@+id/tvTitle">
+        android:layout_marginTop="125dp">
     </GridView>
 
 </RelativeLayout>

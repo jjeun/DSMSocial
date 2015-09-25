@@ -9,7 +9,9 @@
         android:layout_height="wrap_content"
         android:background="@color/searchBackground"
         android:id="@+id/searchView"
-        android:layout_toLeftOf="@+id/shopCartButton" />
+        android:layout_toLeftOf="@+id/shopCartButton"
+        android:hint="Search by artist.."
+        android:visibility="visible" />
 
     <ImageButton
         android:layout_width="66dp"
@@ -21,20 +23,8 @@
         android:scaleType="fitXY"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="10dp" />
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="@string/hello_fragment2"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:background="@color/mainBackground"
-        android:layout_below="@+id/shopCartButton" />
-
+        android:layout_margin="10dp"
+        android:visibility="visible" />
 
     <GridView
         android:layout_width="wrap_content"
@@ -46,7 +36,7 @@
         android:padding="40dp"
         android:horizontalSpacing="20dp"
         android:verticalSpacing="20dp"
-        android:layout_below="@+id/tvTitle">
+        android:layout_marginTop="125dp">
     </GridView>
 
 </RelativeLayout>

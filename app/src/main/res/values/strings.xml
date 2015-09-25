@@ -3,9 +3,8 @@
 
 
 <!-- Titles/Headers that will displayed within the pages/fragments-->
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main_page">MainPage</string>
+    <string name="title_activity_main_page">Main</string>
     <string name="mainButton">Artist Page</string>
     <string name="featureArtist">Featured Artist</string>
 
@@ -18,16 +17,17 @@
 
     <string name="aboutContactTitle">Contact Us</string>
     <string name="aboutContact1">Want to submit your work?</string>
-    <string name="aboutContact2">Contact us at  info@desmoinessocialclub.org.</string>
+    <string name="aboutContact2">Contact us at:  info@desmoinessocialclub.org</string>
     <string name="aboutContact3">900 Mulberry Street</string>
     <string name="aboutContact4">Des Moines, Iowa 50309</string>
     <string name="aboutContact5">515-369-3672</string>
+    <string name="space"> </string>
 
 
 
 
     <!-- Titles that will be displayed at the top of each page-->
-    <string name="app_name">DSMSocial</string>
+    <string name="app_name">Viaduct Gallery</string>
     <string name="hello_fragment1">Welcome to the Viaduct Gallery</string>
     <string name="hello_fragment2">Viaduct Artist Page</string>
     <string name="hello_fragment3">Viaduct Shop</string>
@@ -37,18 +37,19 @@
 
 
     <!-- Major text for the different pages and fragments -->
-    <string name="mainText">Farmivále, the latest exhibit from Ames artist, Lyndsay Nissen,
-        consists of multiple transformed and redesigned carnival games intended to provoke
-        conversation and encourage participation in local social, political and economic issues.
-        Farmivále, the latest exhibit from Ames artist, Lyndsay Nissen, consists of multiple
-        transformed and redesigned carnival games intended to provoke conversation and encourage
-        participation in local social, political and economic issues. </string>
-
     <string name="mainBar">current exhibit</string>
     <string name="mainHeader">Farmivále</string>
-    <string name="mainQuote">Artist Quote Here</string>
+
+    <string name="mainText">Farmivále consists of multiple transformed and redesigned carnival
+        games intended to provoke conversation and encourage participation in local culture.</string>
+
+    <string name="mainQuote">Lyndsay Niessen is a Des Moines artist
+        that specializes in street art related to social issues.</string>
+
     <string name="hours">Opening Reception:  July 10th, 7-10pm</string>
     <string name="hours2">Artist Talk: July 13th, 7 pm</string>
+
+
 
 <!-- Array for the images used in the shop fragment-->
     <string-array name="shopImage">
