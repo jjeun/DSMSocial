@@ -24,6 +24,10 @@
     <string name="space"> </string>
 
 
+<!-- Text for artist bio page-->
+    <string name="artistBio">Farmivále consists of multiple transformed and redesigned carnival
+        games intended to provoke conversation and encourage participation in local culture.</string>
+    <string name="artistBar">work for sale</string>
 
 
     <!-- Titles that will be displayed at the top of each page-->
@@ -49,6 +53,23 @@
     <string name="hours">Opening Reception:  July 10th, 7-10pm</string>
     <string name="hours2">Artist Talk: July 13th, 7 pm</string>
 
+
+<!-- shop activity page-->
+    <string name="shopBio">Farmivále consists of multiple transformed and redesigned carnival
+        games intended to provoke conversation and encourage participation in local culture.</string>
+
+    <string name="shopTitle">Graffiti Girl</string>
+    <string name="shopArtist">Lindsay Nissen</string>
+    <string name="shopBar">product info</string>
+    <string name="shopLocation">Des Moines, Iowa</string>
+    <string name="shopType">Painting</string>
+    <string name="shopMaterial">Spray Paint</string>
+    <string name="shopDimension">H: 10\'  W: 10\'</string>
+    <string name="shopPrice">$80</string>
+
+
+<!-- AddCart activity-->
+    <string name="addCart">Successfuly added to cart!</string>
 
 
 <!-- Array for the images used in the shop fragment-->
@@ -101,5 +122,24 @@
         <item>\n Jewelry</item>
         <item>\n Sculpture</item>
     </string-array>
+
+
+    <string-array name="lyndsay">
+        <item>@drawable/shop1</item>
+        <item>@drawable/shop2</item>
+        <item>@drawable/shop3</item>
+        <item>@drawable/shop7</item>
+        <item>@drawable/shop6</item>
+        <item>@drawable/shop11</item>
+        <item>@drawable/shop13</item>
+        <item>@drawable/art1</item>
+        <item>@drawable/art3</item>
+    </string-array>
+    <string name="title_activity_add_cart">AddCart</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_cart_review">CartReview</string>
+
+
 
 </resources>

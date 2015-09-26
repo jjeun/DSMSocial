@@ -5,13 +5,14 @@
     android:background="@color/mainBackground">
 
     <SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:background="@color/searchBackground"
         android:id="@+id/searchView"
         android:layout_toLeftOf="@+id/shopCartButton"
-        android:hint="Search by artist.."
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search by artist name or media type" />
 
     <ImageButton
         android:layout_width="66dp"

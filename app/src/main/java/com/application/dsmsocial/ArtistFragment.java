@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,9 +38,7 @@ public class ArtistFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);}
 
     // Prepare some dummy data for artistGridview
     private ArrayList<ImageItem> getData() {
@@ -48,7 +48,7 @@ public class ArtistFragment extends Fragment {
         TypedArray type = getResources().obtainTypedArray(R.array.artType);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,name.getString(i) + type.getString(i)));
+            imageItems.add(new ImageItem(bitmap, name.getString(i)+type.getString(i), name.getString(i), type.getString(i)));
         }
         return imageItems;
     }
@@ -69,14 +69,29 @@ public class ArtistFragment extends Fragment {
                 ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
 
                 Intent intent = new Intent(getActivity(), ArtistActivity.class);
-                intent.putExtra("title", item.getTitle());
+                intent.putExtra("name", item.getName());
+                intent.putExtra("type", item.getType());
                 intent.putExtra("image", item.getImage());
                 intent.putExtra("switch", 1);
                 startActivity(intent);
             }
         });
 
-        return rootView;
+        ImageButton mButton = (ImageButton) rootView.findViewById(R.id.shopCartButton);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "shopping cart view button");
+                sendToCart();
+            }
+        });
 
+        return rootView;
+    }
+
+    public void sendToCart(){
+
+        Intent intent = new Intent(getActivity(), CartReview.class);
+        startActivity(intent);
     }
 }

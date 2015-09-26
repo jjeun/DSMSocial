@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class ShopFragment extends Fragment {
 //        TypedArray name = getResources().obtainTypedArray(R.array.shopName);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,null));
+            imageItems.add(new ImageItem(bitmap,null, null, null));
         }
         return imageItems;
     }
@@ -81,6 +82,23 @@ public class ShopFragment extends Fragment {
             }
         });
 
+
+        ImageButton mButton = (ImageButton) rootView.findViewById(R.id.shopCartButton);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "shopping cart view button");
+                sendToCart();
+            }
+        });
+
         return rootView;
+    }
+
+
+    public void sendToCart(){
+
+        Intent intent = new Intent(getActivity(), CartReview.class);
+        startActivity(intent);
     }
 }

@@ -36,6 +36,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.MainPage" />
         </activity>
+        <activity
+            android:name=".AddCart"
+            android:label="@string/title_activity_add_cart"
+            android:parentActivityName=".ShopActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.ShopActivity" />
+        </activity>
+        <activity
+            android:name=".CartReview"
+            android:label="@string/title_activity_cart_review"
+            android:parentActivityName=".AddCart" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.AddCart" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,17 +1,31 @@
 package com.application.dsmsocial;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ArtistActivity extends AppCompatActivity {
+    private static final String TAG = "ArtistBioTag";
+    final Context context = this;
+    private GridView gridView;
+    private GridViewAdapter gridAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +33,61 @@ public class ArtistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artist);
 
 
-        String name = getIntent().getStringExtra("title");
+        String name = getIntent().getStringExtra("name");
+        String type = getIntent().getStringExtra("type");
         Bitmap image = getIntent().getParcelableExtra("image");
         int page = getIntent().getIntExtra("switch", 0);
 
         if (page == 1) {
             TextView titleTextView = (TextView) findViewById(R.id.artistName);
+            TextView titleTextView2 = (TextView) findViewById(R.id.artistType);
+            titleTextView.setGravity(Gravity.CENTER_HORIZONTAL);
             titleTextView.setText(name);
+            titleTextView2.setGravity(Gravity.CENTER_HORIZONTAL);
+            titleTextView2.setText(type);
 
             ImageView imageView = (ImageView) findViewById(R.id.artistImage);
             imageView.setImageBitmap(image);
         }
         else{
             TextView titleTextView = (TextView) findViewById(R.id.artistName);
+            titleTextView.setGravity(Gravity.CENTER_HORIZONTAL);
             titleTextView.setText(R.string.featureArtist);
 
             ImageView imageView = (ImageView) findViewById(R.id.artistImage);
             imageView.setImageResource(R.drawable.artist1);
         }
+
+        gridView = (GridView) findViewById(R.id.artistBioGridView);
+        gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
+        gridView.setAdapter(gridAdapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Log.v(TAG, "artist bio clicked");
+                ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
+
+                Intent intent = new Intent(context, ShopActivity.class);
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("image", item.getImage());
+                intent.putExtra("type", item.getType());
+                intent.putExtra("name", item.getName());
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    // Prepare some dummy data for shopGridview
+    private ArrayList<ImageItem> getData() {
+        final ArrayList<ImageItem> imageItems = new ArrayList<>();
+        TypedArray imgs = getResources().obtainTypedArray(R.array.lyndsay);
+
+        for (int i = 0; i < imgs.length(); i++) {
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
+            imageItems.add(new ImageItem(bitmap,null, null, null));
+        }
+        return imageItems;
     }
 
     @Override
