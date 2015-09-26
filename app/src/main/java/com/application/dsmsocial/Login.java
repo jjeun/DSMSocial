@@ -28,12 +28,12 @@ public class Login extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(this,DB_NAME);
-        try {
-            database = dbOpenHelper.openDataBase();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(this,DB_NAME);
+//        try {
+//            database = dbOpenHelper.openDataBase();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
