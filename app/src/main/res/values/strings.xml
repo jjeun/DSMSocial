@@ -101,5 +101,8 @@
         <item>\n Jewelry</item>
         <item>\n Sculpture</item>
     </string-array>
+    <string name="title_activity_checkout">Checkout</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

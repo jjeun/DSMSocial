@@ -36,14 +36,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.MainPage" />
         </activity>
-
         <activity
             android:name=".Login"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:label="LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.Login" />
+        </activity>
+        <activity
+            android:name=".Checkout"
+            android:label="@string/title_activity_checkout" >
         </activity>
     </application>
 
