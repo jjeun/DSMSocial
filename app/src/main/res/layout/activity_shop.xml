@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textColor="@color/mainFont"
-        android:text="@string/shopArtist"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/shopTitle"
         android:gravity="center"

@@ -27,16 +27,21 @@ public class ArtistActivity extends AppCompatActivity {
     private GridView gridView;
     private GridViewAdapter gridAdapter;
 
+    String name;
+    String type;
+    Bitmap image;
+    int page;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist);
 
 
-        String name = getIntent().getStringExtra("name");
-        String type = getIntent().getStringExtra("type");
-        Bitmap image = getIntent().getParcelableExtra("image");
-        int page = getIntent().getIntExtra("switch", 0);
+        name = getIntent().getStringExtra("name");
+        type = getIntent().getStringExtra("type");
+        image = getIntent().getParcelableExtra("image");
+        page = getIntent().getIntExtra("switch", 0);
 
         if (page == 1) {
             TextView titleTextView = (TextView) findViewById(R.id.artistName);
@@ -53,6 +58,12 @@ public class ArtistActivity extends AppCompatActivity {
             TextView titleTextView = (TextView) findViewById(R.id.artistName);
             titleTextView.setGravity(Gravity.CENTER_HORIZONTAL);
             titleTextView.setText(R.string.featureArtist);
+
+            TextView titleTextView2 = (TextView) findViewById(R.id.artistType);
+            titleTextView2.setGravity(Gravity.CENTER_HORIZONTAL);
+            titleTextView2.setTextSize(15);
+            titleTextView2.setPadding(0,20,0,0);
+            titleTextView2.setText(name);
 
             ImageView imageView = (ImageView) findViewById(R.id.artistImage);
             imageView.setImageResource(R.drawable.artist1);
@@ -85,7 +96,7 @@ public class ArtistActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,null, null, null));
+            imageItems.add(new ImageItem(bitmap,null, name, null));
         }
         return imageItems;
     }

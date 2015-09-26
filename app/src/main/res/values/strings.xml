@@ -104,6 +104,24 @@
         <item>@drawable/shop15</item>
     </string-array>
 
+    <string-array name="shopName">
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Alex Petersono</item>
+        <item>Alex Petersono</item>
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Janelle McCarthy</item>
+        <item>Janelle McCarthy</item>
+        <item>Steven Smith</item>
+        <item>Lyndsay Nissen</item>
+        <item>Steven Smith</item>
+        <item>Lyndsay Nissen</item>
+        <item>Samantha Brown</item>
+        <item>Eric Michael</item>
+    </string-array>
+
 
     <!-- array used for the images in the artist fragment-->
     <string-array name="artistImage">
@@ -148,6 +166,7 @@
         <item>@drawable/art1</item>
         <item>@drawable/art3</item>
     </string-array>
+
 
 
 

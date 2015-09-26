@@ -18,17 +18,21 @@ import android.widget.Toast;
 
 public class ShopActivity extends AppCompatActivity {
     private static final String TAG = "ShopTag";
+    String name;
+    String title;
+    Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
-        String name = getIntent().getStringExtra("title");
-        Bitmap image = getIntent().getParcelableExtra("image");
+        title = getIntent().getStringExtra("title");
+        name = getIntent().getStringExtra("name");
+        image = getIntent().getParcelableExtra("image");
 
-//        TextView titleTextView = (TextView) findViewById(R.id.shopName);
-//        titleTextView.setText(name);
+        TextView titleTextView = (TextView) findViewById(R.id.shopArtist);
+        titleTextView.setText(name);
 
         ImageView imageView = (ImageView) findViewById(R.id.shopImage);
         imageView.setImageBitmap(image);
@@ -47,8 +51,10 @@ public class ShopActivity extends AppCompatActivity {
     public void sendToCart(){
 
         Intent intent = new Intent(this, AddCart.class);
-        startActivity(intent);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
 
+        startActivity(intent);
     }
 
     @Override

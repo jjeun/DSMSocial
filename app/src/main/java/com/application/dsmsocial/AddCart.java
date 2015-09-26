@@ -2,6 +2,7 @@ package com.application.dsmsocial;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +15,16 @@ public class AddCart extends AppCompatActivity {
     private static final String TAG = "AddCartTag";
     Context context = this;
 
+    String name;
+    Bitmap image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_cart);
+
+        name = getIntent().getStringExtra("name");
+        image = getIntent().getParcelableExtra("image");
 
 
         ImageButton mButton = (ImageButton) findViewById(R.id.cartButton);
@@ -44,14 +51,17 @@ public class AddCart extends AppCompatActivity {
     public void sendToCart(){
 
         Intent intent = new Intent(this, CartReview.class);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
         startActivity(intent);
-
     }
 
 
     public void returnShop(){
 
         Intent intent = new Intent(context, MainPage.class);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
         startActivity(intent);
 
     }

@@ -41,7 +41,6 @@
         android:id="@+id/shopImage"
         android:padding="15dp"
         android:layout_alignParentTop="false"
-        android:src="@drawable/shop1"
         android:layout_below="@+id/cartItem"
         android:layout_alignLeft="@+id/cartItem" />
 
@@ -59,7 +58,6 @@
 
     <TextView
         android:id="@+id/itemArtist"
-        android:text="@string/itemArtist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/mainBackground"

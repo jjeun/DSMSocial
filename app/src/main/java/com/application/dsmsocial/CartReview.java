@@ -1,6 +1,7 @@
 package com.application.dsmsocial;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,16 +9,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CartReview extends AppCompatActivity {
 
     private static final String TAG = "CartTag";
+    String name;
+    Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_review);
+
+        name = getIntent().getStringExtra("name");
+        image = getIntent().getParcelableExtra("image");
+
+        TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
+        titleTextView.setText(name);
+
+        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
+        imageView.setImageBitmap(image);
 
         ImageButton mButton = (ImageButton) findViewById(R.id.deleteButton);
         mButton.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +56,9 @@ public class CartReview extends AppCompatActivity {
     public void sendToDelete(){
         Toast.makeText(CartReview.this, "Item Deleted", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, CartReview.class);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
+
         startActivity(intent);
     }
 
@@ -49,8 +66,10 @@ public class CartReview extends AppCompatActivity {
     public void sendToCheckout(){
 
         Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
 
+        startActivity(intent);
     }
 
     @Override

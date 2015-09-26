@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,12 @@ import java.util.ArrayList;
 public class ArtistFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private static final String TAG = "ArtistFragmentTag";
+    String name;
+    String type;
+    Bitmap image;
+    int page;
+
+    ImageItem item;
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
@@ -59,6 +66,11 @@ public class ArtistFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_artist, container, false);
 
+        name = getActivity().getIntent().getStringExtra("name");
+        type = getActivity().getIntent().getStringExtra("type");
+        image = getActivity().getIntent().getParcelableExtra("image");
+        page = getActivity().getIntent().getIntExtra("switch", 0);
+
         gridView = (GridView) rootView.findViewById(R.id.artistGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
@@ -66,7 +78,7 @@ public class ArtistFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Log.v(TAG, "artist clicked");
-                ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
+                item = (ImageItem) gridView.getItemAtPosition(position);
 
                 Intent intent = new Intent(getActivity(), ArtistActivity.class);
                 intent.putExtra("name", item.getName());
@@ -91,7 +103,16 @@ public class ArtistFragment extends Fragment {
 
     public void sendToCart(){
 
-        Intent intent = new Intent(getActivity(), CartReview.class);
-        startActivity(intent);
+
+        if(name == null){
+            Toast.makeText(getActivity(), "Empty Shopping Cart", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+            Intent intent = new Intent(getActivity(), CartReview.class);
+            intent.putExtra("image", image);
+            intent.putExtra("name", name);
+            startActivity(intent);
+        }
     }
 }

@@ -79,10 +79,11 @@ public class MainPageFragment extends Fragment {
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "main clicked");   // Log's that Max button was pressed.
+                Log.v(TAG, "main clicked");
 
                 // create method to activity
                 Intent intent = new Intent(getActivity(), ArtistActivity.class);
+                intent.putExtra("name", "Lyndsay Nissen");
                 startActivity(intent);
             }
         });

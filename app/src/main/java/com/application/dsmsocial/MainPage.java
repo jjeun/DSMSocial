@@ -1,4 +1,5 @@
 package com.application.dsmsocial;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,10 @@ import android.view.MenuItem;
 import com.astuetz.PagerSlidingTabStrip;
 
 public class MainPage extends FragmentActivity {
+    String name;
+    String type;
+    Bitmap image;
+    int page;
 
     public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         final int PAGE_COUNT = 4;
@@ -56,6 +61,9 @@ public class MainPage extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        name = getIntent().getStringExtra("name");
+        image = getIntent().getParcelableExtra("image");
 
         // Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
