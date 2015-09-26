@@ -45,9 +45,10 @@ public class ArtistFragment extends Fragment {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.artistImage);
         TypedArray name = getResources().obtainTypedArray(R.array.artistName);
+        TypedArray type = getResources().obtainTypedArray(R.array.artType);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,name.getString(i)));
+            imageItems.add(new ImageItem(bitmap,name.getString(i) + type.getString(i)));
         }
         return imageItems;
     }

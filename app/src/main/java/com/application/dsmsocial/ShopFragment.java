@@ -49,10 +49,10 @@ public class ShopFragment extends Fragment {
     private ArrayList<ImageItem> getData() {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.shopImage);
-        TypedArray name = getResources().obtainTypedArray(R.array.shopName);
+//        TypedArray name = getResources().obtainTypedArray(R.array.shopName);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,name.getString(i)));
+            imageItems.add(new ImageItem(bitmap,null));
         }
         return imageItems;
     }

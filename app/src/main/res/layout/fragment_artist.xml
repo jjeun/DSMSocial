@@ -1,19 +1,30 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkBlue">
+    android:background="@color/mainBackground">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="@string/hello_fragment2"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:background="@color/darkBlue"/>
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/searchBackground"
+        android:id="@+id/searchView"
+        android:layout_toLeftOf="@+id/shopCartButton"
+        android:hint="Search by artist.."
+        android:visibility="visible" />
+
+    <ImageButton
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:id="@+id/shopCartButton"
+        android:layout_gravity="right"
+        android:src="@drawable/cart"
+        android:background="@color/artistBackground"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:visibility="visible" />
 
     <GridView
         android:layout_width="wrap_content"
@@ -24,7 +35,8 @@
         android:gravity="center"
         android:padding="40dp"
         android:horizontalSpacing="20dp"
-        android:verticalSpacing="20dp">
+        android:verticalSpacing="20dp"
+        android:layout_marginTop="125dp">
     </GridView>
 
-</LinearLayout>
+</RelativeLayout>
