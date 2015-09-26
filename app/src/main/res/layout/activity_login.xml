@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/loginGradient"
+    tools:context="com.application.dsmsocial.Login"
+    android:id="@+id/login">
+
+    <EditText
+        android:background="@null"
+        android:id="@+id/emailField"
+        android:inputType="textWebEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="EMAIL"
+        android:textColorHint="#f7f7f7"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textColor="#f7f7f7"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:ellipsize="start"
+        android:layout_marginBottom="58dp"
+        android:layout_alignBottom="@+id/passwordField"
+        android:layout_centerHorizontal="true" />
+    <EditText
+        android:background="@null"
+        android:id="@+id/passwordField"
+        android:inputType="textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PASSWORD"
+        android:textColorHint="#f7f7f7"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textColor="#f7f7f7"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:ellipsize="start"
+        android:layout_marginTop="270dp"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:id="@+id/guestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/guest"
+        android:contentDescription="guest button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp" />
+    <ImageButton
+        android:id="@+id/enterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/enter"
+        android:contentDescription="enter button"
+        android:layout_below="@+id/passwordField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
+
+</RelativeLayout>

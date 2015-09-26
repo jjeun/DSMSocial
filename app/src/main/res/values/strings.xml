@@ -114,4 +114,8 @@
     <string name="hello_blank_fragment4">About Us</string>
     <string name="title_activity_artist">ArtistActivity</string>
     <string name="title_activity_shop">ShopActivity</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="Raleway-Light">Raleway-Light</string>
+
 </resources>
