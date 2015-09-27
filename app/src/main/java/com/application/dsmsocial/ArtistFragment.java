@@ -7,6 +7,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.app.SearchManager;
+import android.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -32,7 +36,7 @@ public class ArtistFragment extends Fragment {
     int page;
 
     ImageItem item;
-
+    private SearchView searchView;
     private GridView gridView;
     private GridViewAdapter gridAdapter;
 
@@ -54,7 +58,7 @@ public class ArtistFragment extends Fragment {
         TypedArray name = getResources().obtainTypedArray(R.array.artistName);
         TypedArray type = getResources().obtainTypedArray(R.array.artType);
         for (int i = 0; i < imgs.length(); i++) {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i,-1));
             imageItems.add(new ImageItem(bitmap, name.getString(i)+type.getString(i), name.getString(i), type.getString(i)));
         }
         return imageItems;
@@ -74,6 +78,22 @@ public class ArtistFragment extends Fragment {
         gridView = (GridView) rootView.findViewById(R.id.artistGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
+
+        searchView = (SearchView) rootView.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                gridAdapter.filter(query.toLowerCase());
+                return false;
+            }
+        });
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {

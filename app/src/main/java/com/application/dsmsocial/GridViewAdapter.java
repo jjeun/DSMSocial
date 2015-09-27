@@ -7,22 +7,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 
-public class GridViewAdapter extends ArrayAdapter<ImageItem> {
+public class GridViewAdapter extends ArrayAdapter<ImageItem>{
     private Context context;
     private int layoutResourceId;
-    private ArrayList data = new ArrayList();
+    private List<ImageItem> dataList = null;
+    private ArrayList<ImageItem> data;
+
 
     public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
-        this.data = data;
+        this.data = new ArrayList();
+        this.data.addAll(data);
+        this.dataList = data;
     }
 
     @Override
@@ -50,5 +57,21 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
     static class ViewHolder {
         TextView imageTitle;
         ImageView image;
+    }
+
+
+    public void filter(String charText) {
+        charText = charText.toLowerCase();
+        dataList.clear();
+        if (charText.length() == 0) {
+            dataList.addAll(data);
+        } else {
+            for (ImageItem i : data) {
+                if (i.getName().toLowerCase().contains(charText)) {
+                    dataList.add(i);
+                }
+            }
+        }
+        this.notifyDataSetChanged();
     }
 }
