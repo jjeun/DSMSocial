@@ -41,7 +41,7 @@ public class AddCart extends AppCompatActivity {
         mButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "continue shopping button");
+                Log.v(TAG, "continueButton2 shopping button");
                 returnShop();
             }
         });
