@@ -2,7 +2,6 @@ package com.application.dsmsocial;
 
 
 class User {
-    int ID;
     String password;
     String email;
     String firstName;
@@ -12,20 +11,7 @@ class User {
     String State;
     String zipCode;
 
-
-    public User() {
-        this.ID++;
-        this.password = null;
-        this.email = null;
-        this.firstName = null;
-        this.lastName = null;
-        this.streetAddress = null;
-        this.City = null;
-        this.State = null;
-        this.zipCode = null;
-    }
-
-    public User(String password, String email, String firstName, String lastName, String streetAddress, String City, String State, String zipCode) {
+    public void setUser(String password, String email, String firstName, String lastName, String streetAddress, String City, String State, String zipCode) {
         this.password = password;
         this.email = email;
         this.firstName = firstName;
