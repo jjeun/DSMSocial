@@ -10,6 +10,7 @@
     <string name="title_activity_add_cart">Confirmation</string>
     <string name="title_activity_cart_review">Cart</string>
     <string name="title_activity_login">Login</string>
+    <string name="title_activity_checkout">Checkout</string>
 
 
     <string name="aboutTitle">Viaduct Gallery</string>
@@ -153,7 +154,6 @@
         <item>\n Jewelry</item>
         <item>\n Sculpture</item>
     </string-array>
-    <string name="title_activity_checkout">Checkout</string>
 
     <string name="hello_world">Hello world!</string>
 
@@ -170,11 +170,12 @@
         <item>@drawable/art3</item>
     </string-array>
 
+
+
     <string name="billing">billing</string>
     <string name="card_info">card info</string>
     <string name="shipping">shipping</string>
     <string name="title_activity_confirmation">confirmation</string>
-
     <string name="thankyouText">Thank you for your order!</string>
     <string name="orderText">You will recieve your confirmation email shortly!</string>
 

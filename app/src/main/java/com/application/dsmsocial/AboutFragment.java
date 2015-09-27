@@ -29,8 +29,10 @@ public class AboutFragment extends Fragment {
     private TextView aboutContact5;
 
     int [] resources = {
-            R.drawable.vgallery_about,
-            R.drawable.vgallery_about2
+            R.drawable.slideshow1,
+            R.drawable.slideshow2,
+            R.drawable.slideshow3,
+            R.drawable.slideshow4
     };
 
 

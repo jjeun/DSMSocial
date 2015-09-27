@@ -23,6 +23,14 @@ public class Checkout extends AppCompatActivity {
     private EditText nameUser, street, townState, zipCode;
     String name;
     Bitmap image;
+    String firstName;
+    String lastName;
+    String address;
+    String city;
+    String state;
+    String zipcode;
+    String email;
+    int page;
 
 
 
@@ -31,24 +39,56 @@ public class Checkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
-        Intent intent = getIntent();
 
-        name=getIntent().getStringExtra("name");
-        image=getIntent().getParcelableExtra("image");
 
-//        TextView titleTextView = (TextView) findViewById(R.id.shopArtist);
-//        titleTextView.setText(name);
-//
-//        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
-//        imageView.setImageBitmap(image);
+            name = getIntent().getStringExtra("name");
+            image = getIntent().getParcelableExtra("image");
+            firstName = getIntent().getStringExtra("firstName");
+            lastName = getIntent().getStringExtra("lastName");
+            email = getIntent().getStringExtra("email");
+            address = getIntent().getStringExtra("address");
+            city = getIntent().getStringExtra("city");
+            state = getIntent().getStringExtra("state");
+            zipcode = getIntent().getStringExtra("zipcode");
+            page = getIntent().getIntExtra("switch", 0);
 
-//
-       billing = (TextView) findViewById(R.id.billing);
-       billing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
-       cardinfo = (TextView) findViewById(R.id.cardinfo);
-       cardinfo.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/Raleway-Light.ttf"));
-       shipping = (TextView) findViewById(R.id.shipping);
-       shipping.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+        TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
+        titleTextView.setText(name);
+
+        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
+        imageView.setImageBitmap(image);
+
+
+        billing = (TextView) findViewById(R.id.billing);
+        billing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+        cardinfo = (TextView) findViewById(R.id.cardinfo);
+        cardinfo.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/Raleway-Light.ttf"));
+        shipping = (TextView) findViewById(R.id.shipping);
+        shipping.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+
+        if(page == 1) {
+            TextView name = (TextView) findViewById(R.id.name);
+            TextView street = (TextView) findViewById(R.id.street);
+            TextView townstate = (TextView) findViewById(R.id.townstate);
+            TextView zipCode = (TextView) findViewById(R.id.zipCode);
+
+            TextView nameOnCard = (TextView) findViewById(R.id.nameOnCard);
+            TextView nameShipping = (TextView) findViewById(R.id.nameShipping);
+            TextView streetShipping = (TextView) findViewById(R.id.streetShipping);
+            TextView townstateShipping = (TextView) findViewById(R.id.townstateShipping);
+            TextView zipCodeShipping = (TextView) findViewById(R.id.zipCodeShipping);
+
+            name.setText(firstName + " " + lastName);
+            street.setText(address);
+            townstate.setText(city + ", " + state);
+            zipCode.setText(zipcode);
+
+            nameOnCard.setText(firstName + " " + lastName);
+            nameShipping.setText(firstName + " " + lastName);
+            streetShipping.setText(address);
+            townstateShipping.setText(city + ", " + state);
+            zipCodeShipping.setText(zipcode);
+        }
 
         ImageButton continueButton2 = (ImageButton) findViewById(R.id.continueButton2);
         continueButton2.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +97,6 @@ public class Checkout extends AppCompatActivity {
                 sendToConfirmation();
             }
         });
-
     }
 
     public void sendToConfirmation(){
