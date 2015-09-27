@@ -55,9 +55,9 @@ public class CartReview extends AppCompatActivity {
 
     public void sendToDelete(){
         Toast.makeText(CartReview.this, "Item Deleted", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, CartReview.class);
-        intent.putExtra("image", image);
-        intent.putExtra("name", name);
+        Intent intent = new Intent(this, MainPage.class);
+        //intent.putExtra("image", image);
+        //intent.putExtra("name", name);
 
         startActivity(intent);
     }
