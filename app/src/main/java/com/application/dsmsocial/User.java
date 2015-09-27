@@ -1,8 +1,6 @@
 package com.application.dsmsocial;
 
-/**
- * Created by Owner on 9/24/2015.
- */
+
 class User {
     int ID;
     String password;

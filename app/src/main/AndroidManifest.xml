@@ -37,16 +37,29 @@
                 android:value="com.application.dsmsocial.MainPage" />
         </activity>
         <activity
-            android:name=".Login"
-            android:label="LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.application.dsmsocial.Login" />
+            android:name=".AddCart"
+            android:label="@string/title_activity_add_cart"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value="com.application.dsmsocial.ShopActivity" />-->
         </activity>
         <activity
-            android:name=".Checkout"
-            android:label="@string/title_activity_checkout" >
+            android:name=".CartReview"
+            android:label="@string/title_activity_cart_review">
+            android:parentActivityName=".AddCart" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.AddCart" />
+        </activity>
+
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value="com.application.dsmsocial.Login" />-->
         </activity>
     </application>
 

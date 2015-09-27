@@ -13,7 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,6 +26,12 @@ import java.util.ArrayList;
 public class ArtistFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private static final String TAG = "ArtistFragmentTag";
+    String name;
+    String type;
+    Bitmap image;
+    int page;
+
+    ImageItem item;
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
@@ -36,9 +45,7 @@ public class ArtistFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState);}
 
     // Prepare some dummy data for artistGridview
     private ArrayList<ImageItem> getData() {
@@ -48,7 +55,7 @@ public class ArtistFragment extends Fragment {
         TypedArray type = getResources().obtainTypedArray(R.array.artType);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,name.getString(i) + type.getString(i)));
+            imageItems.add(new ImageItem(bitmap, name.getString(i)+type.getString(i), name.getString(i), type.getString(i)));
         }
         return imageItems;
     }
@@ -59,6 +66,11 @@ public class ArtistFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_artist, container, false);
 
+        name = getActivity().getIntent().getStringExtra("name");
+        type = getActivity().getIntent().getStringExtra("type");
+        image = getActivity().getIntent().getParcelableExtra("image");
+        page = getActivity().getIntent().getIntExtra("switch", 0);
+
         gridView = (GridView) rootView.findViewById(R.id.artistGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
@@ -66,17 +78,41 @@ public class ArtistFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Log.v(TAG, "artist clicked");
-                ImageItem item = (ImageItem) gridView.getItemAtPosition(position);
+                item = (ImageItem) gridView.getItemAtPosition(position);
 
                 Intent intent = new Intent(getActivity(), ArtistActivity.class);
-                intent.putExtra("title", item.getTitle());
+                intent.putExtra("name", item.getName());
+                intent.putExtra("type", item.getType());
                 intent.putExtra("image", item.getImage());
                 intent.putExtra("switch", 1);
                 startActivity(intent);
             }
         });
 
-        return rootView;
+        ImageButton mButton = (ImageButton) rootView.findViewById(R.id.shopCartButton);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "shopping cart view button");
+                sendToCart();
+            }
+        });
 
+        return rootView;
+    }
+
+    public void sendToCart(){
+
+
+        if(name == null){
+            Toast.makeText(getActivity(), "Empty Shopping Cart", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+            Intent intent = new Intent(getActivity(), CartReview.class);
+            intent.putExtra("image", image);
+            intent.putExtra("name", name);
+            startActivity(intent);
+        }
     }
 }

@@ -2,55 +2,70 @@ package com.application.dsmsocial;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShopActivity extends AppCompatActivity {
-    private static final String TAG = "ShopTag";
+public class CartReview extends AppCompatActivity {
+
+    private static final String TAG = "CartTag";
     String name;
-    String title;
     Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop);
+        setContentView(R.layout.activity_cart_review);
 
-        title = getIntent().getStringExtra("title");
         name = getIntent().getStringExtra("name");
         image = getIntent().getParcelableExtra("image");
 
-        TextView titleTextView = (TextView) findViewById(R.id.shopArtist);
+        TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
         titleTextView.setText(name);
 
         ImageView imageView = (ImageView) findViewById(R.id.shopImage);
         imageView.setImageBitmap(image);
 
-        ImageButton mButton = (ImageButton) findViewById(R.id.addCart);
+        ImageButton mButton = (ImageButton) findViewById(R.id.deleteButton);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "cart button");
-                sendToCart();
+                sendToDelete();
+            }
+        });
+
+        ImageButton mButton2 = (ImageButton) findViewById(R.id.checkoutButton);
+        mButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "cart button");
+                sendToCheckout();
             }
         });
     }
 
 
-    public void sendToCart(){
+    public void sendToDelete(){
+        Toast.makeText(CartReview.this, "Item Deleted", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, CartReview.class);
+        intent.putExtra("image", image);
+        intent.putExtra("name", name);
 
-        Intent intent = new Intent(this, AddCart.class);
+        startActivity(intent);
+    }
+
+
+    public void sendToCheckout(){
+
+        Intent intent = new Intent(this, Login.class);
         intent.putExtra("image", image);
         intent.putExtra("name", name);
 
@@ -60,7 +75,7 @@ public class ShopActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_shop, menu);
+        getMenuInflater().inflate(R.menu.menu_cart_review, menu);
         return true;
     }
 
@@ -69,14 +84,11 @@ public class ShopActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-        // switch statement to navigate up back to the fragment. Pops from stack.
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                NavUtils.navigateUpTo(this,
-                        new Intent(this, ShopActivity.class));
-                return true;
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

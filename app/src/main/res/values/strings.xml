@@ -7,6 +7,9 @@
     <string name="title_activity_main_page">Main</string>
     <string name="mainButton">Artist Page</string>
     <string name="featureArtist">Featured Artist</string>
+    <string name="title_activity_add_cart">Confirmation</string>
+    <string name="title_activity_cart_review">Cart</string>
+    <string name="title_activity_login">Login</string>
 
 
     <string name="aboutTitle">Viaduct Gallery</string>
@@ -24,6 +27,10 @@
     <string name="space"> </string>
 
 
+<!-- Text for artist bio page-->
+    <string name="artistBio">Farmivále consists of multiple transformed and redesigned carnival
+        games intended to provoke conversation and encourage participation in local culture.</string>
+    <string name="artistBar">work for sale</string>
 
 
     <!-- Titles that will be displayed at the top of each page-->
@@ -50,6 +57,33 @@
     <string name="hours2">Artist Talk: July 13th, 7 pm</string>
 
 
+<!-- shop activity page-->
+    <string name="shopBio">Farmivále consists of multiple transformed and redesigned carnival
+        games intended to provoke conversation and encourage participation in local culture.</string>
+
+    <string name="shopTitle">Graffiti Girl</string>
+    <string name="shopArtist">Lindsay Nissen</string>
+    <string name="shopBar">product info</string>
+    <string name="shopLocation">Des Moines, Iowa</string>
+    <string name="shopType">Painting</string>
+    <string name="shopMaterial">Spray Paint</string>
+    <string name="shopDimension">H: 10\'  W: 10\'</string>
+    <string name="shopPrice">$80</string>
+
+
+<!-- AddCart activity-->
+    <string name="addCart">Successfuly added to cart!</string>
+
+
+<!-- cart review activity -->
+    <string name="cartItem">item</string>
+    <string name="cartPrice">price</string>
+    <string name="itemName">Graffiti Girl</string>
+    <string name="itemArtist">Lindsay Nissen</string>
+    <string name="itemQuantity">Quantity: 1</string>
+    <string name="itemPrice">$80</string>
+    <string name="total">TOTAL: $80</string>
+
 
 <!-- Array for the images used in the shop fragment-->
     <string-array name="shopImage">
@@ -68,6 +102,24 @@
         <item>@drawable/shop13</item>
         <item>@drawable/shop14</item>
         <item>@drawable/shop15</item>
+    </string-array>
+
+    <string-array name="shopName">
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Alex Petersono</item>
+        <item>Alex Petersono</item>
+        <item>Lyndsay Nissen</item>
+        <item>Lyndsay Nissen</item>
+        <item>Janelle McCarthy</item>
+        <item>Janelle McCarthy</item>
+        <item>Steven Smith</item>
+        <item>Lyndsay Nissen</item>
+        <item>Steven Smith</item>
+        <item>Lyndsay Nissen</item>
+        <item>Samantha Brown</item>
+        <item>Eric Michael</item>
     </string-array>
 
 
@@ -104,5 +156,22 @@
     <string name="title_activity_checkout">Checkout</string>
 
     <string name="hello_world">Hello world!</string>
+
+
+    <string-array name="lyndsay">
+        <item>@drawable/shop1</item>
+        <item>@drawable/shop2</item>
+        <item>@drawable/shop3</item>
+        <item>@drawable/shop7</item>
+        <item>@drawable/shop6</item>
+        <item>@drawable/shop11</item>
+        <item>@drawable/shop13</item>
+        <item>@drawable/art1</item>
+        <item>@drawable/art3</item>
+    </string-array>
+
+
+
+
 
 </resources>
