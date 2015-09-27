@@ -1,18 +1,39 @@
 package com.application.dsmsocial;
 
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import junit.framework.TestCase;
+
+import org.w3c.dom.Text;
 
 public class confirmation extends AppCompatActivity {
-
+    private TextView thankYouText;
+    private TextView orderText;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+        thankYouText = (TextView) findViewById(R.id.thankyouText);
+        thankYouText.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+        orderText = (TextView) findViewById(R.id.orderText);
+        orderText.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+        ImageButton menuReturn = (ImageButton) findViewById(R.id.menuButton);
+        menuReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                returnToMenu();
+            }
+        });
     }
 
     @Override
@@ -20,6 +41,12 @@ public class confirmation extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_confirmation, menu);
         return true;
+    }
+
+
+    public void returnToMenu()
+    {
+        Intent intent = new Intent(this, MainPage.class);
     }
 
     @Override

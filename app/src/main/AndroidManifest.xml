@@ -70,6 +70,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.Login" />
         </activity>
+
+        <activity android:name=".confirmation"
+            android:label="FinalConfirmation"
+            android:parentActivityName=".Checkout">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.application.dsmsocial.Checkout"/>
+        </activity>
     </application>
 
 </manifest>

@@ -36,19 +36,19 @@ public class Checkout extends AppCompatActivity {
         name=getIntent().getStringExtra("name");
         image=getIntent().getParcelableExtra("image");
 
-        TextView titleTextView = (TextView) findViewById(R.id.shopArtist);
-        titleTextView.setText(name);
+//        TextView titleTextView = (TextView) findViewById(R.id.shopArtist);
+//        titleTextView.setText(name);
+//
+//        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
+//        imageView.setImageBitmap(image);
 
-        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
-        imageView.setImageBitmap(image);
-
-
-        billing = (TextView) findViewById(R.id.billing);
-        billing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
-        cardinfo = (TextView) findViewById(R.id.cardinfo);
-        cardinfo.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/Raleway-Light.ttf"));
-        shipping = (TextView) findViewById(R.id.shipping);
-        shipping.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+//
+       billing = (TextView) findViewById(R.id.billing);
+       billing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
+       cardinfo = (TextView) findViewById(R.id.cardinfo);
+       cardinfo.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/Raleway-Light.ttf"));
+       shipping = (TextView) findViewById(R.id.shipping);
+       shipping.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/Raleway-Light.ttf"));
 
         ImageButton continueButton2 = (ImageButton) findViewById(R.id.continueButton2);
         continueButton2.setOnClickListener(new View.OnClickListener() {
