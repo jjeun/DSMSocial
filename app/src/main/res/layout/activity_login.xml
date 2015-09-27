@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/login_gradient"
+    android:background="@drawable/login_bg"
     tools:context="com.application.dsmsocial.Login"
     android:id="@+id/login">
 
@@ -14,13 +14,14 @@
         android:hint="EMAIL"
         android:textColorHint="#f7f7f7"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textColor="#f7f7f7"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:ellipsize="start"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/passwordField" />
+        android:layout_marginTop="315dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
     <EditText
         android:background="@null"
         android:id="@+id/passwordField"
@@ -30,33 +31,36 @@
         android:hint="PASSWORD"
         android:textColorHint="#f7f7f7"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="40dp"
         android:textColor="#f7f7f7"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:ellipsize="start"
-        android:layout_marginTop="45dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/enterButton" />
+        android:selectAllOnFocus="true"
+        android:phoneNumber="false"
+        android:password="false"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
     <ImageButton
         android:id="@+id/guestButton"
+        android:onClick="loginGuest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/guest"
         android:contentDescription="guest button"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp"
-        android:layout_below="@+id/enterButton" />
+        android:layout_marginTop="94dp"
+        android:layout_below="@+id/enterButton"
+        android:layout_centerHorizontal="true" />
     <ImageButton
         android:id="@+id/enterButton"
+        android:onClick="loginUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/enter"
         android:contentDescription="enter button"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="40dp"
-        android:layout_centerInParent="true" />
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/passwordField"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
