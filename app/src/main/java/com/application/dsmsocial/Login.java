@@ -27,36 +27,57 @@ public class Login extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        User user = new User();
+
         user.setUser("123", "danthedad@yahoo.com", "Dan", "Jones", "1591 North Pleasant Drive", "Des Moines", "IA", "50311");
+
+        inputEmail = (EditText) findViewById(R.id.emailField);
+        inputPassword = (EditText) findViewById(R.id.passwordField);
 
         ImageButton loginButton = (ImageButton) findViewById(R.id.enterButton);
         ImageButton guestButton = (ImageButton) findViewById(R.id.guestButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginUser(user);
+            }
+        });
+
+        guestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginGuest();
+            }
+        });
 
     }
 
     public void loginUser(User user)
     {
         Intent intent = new Intent(this, Checkout.class);
-        inputEmail = (EditText) findViewById(R.id.emailField);
-        String inputtedEmail = inputEmail.getText().toString();
-        inputPassword = (EditText) findViewById(R.id.passwordField);
-        String inputtedPassword = inputPassword.getText().toString();
+//        inputEmail = (EditText) findViewById(R.id.emailField);
+//        String inputtedEmail = inputEmail.getText().toString();
+//        inputPassword = (EditText) findViewById(R.id.passwordField);
+//        String inputtedPassword = inputPassword.getText().toString();
 
-            if(inputtedEmail == user.getEmail() && inputtedPassword == user.getPassword())
+            if(inputEmail.toString().equals(user.getEmail()) && inputPassword.toString().equals(user.getPassword()))
             {
                 isItAUser = true;
+                startActivity(intent);
             }
-        intent.putExtra(IS_THERE_A_USER, isItAUser);
-        startActivity(intent);
+
+            else{
+                Toast.makeText(Login.this,"Please enter a Valid Username or Password", Toast.LENGTH_SHORT).show();
+            }
+
+//        intent.putExtra(IS_THERE_A_USER, isItAUser);
+
 
     }
 
-    public void loginGuest(View view)
+    public void loginGuest()
     {
         Intent intent = new Intent(this, Checkout.class);
-        isItAUser = false;
-        intent.putExtra(IS_THERE_A_USER, isItAUser);
         startActivity(intent);
     }
 
