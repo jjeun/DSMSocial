@@ -64,8 +64,8 @@
 
         <activity
             android:name=".Checkout"
-            android:label="@string/title_activity_artist"
-            android:parentActivityName=".Login" >
+            android:label="@string/title_activity_checkout"
+            android:parentActivityName=".Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.Login" />
