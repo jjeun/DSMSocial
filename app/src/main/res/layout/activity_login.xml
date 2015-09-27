@@ -14,13 +14,13 @@
         android:hint="EMAIL"
         android:textColorHint="#f7f7f7"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="40sp"
         android:textColor="#f7f7f7"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:ellipsize="start"
-        android:layout_marginBottom="58dp"
-        android:layout_alignBottom="@+id/passwordField"
+        android:layout_marginTop="315dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <EditText
         android:background="@null"
@@ -31,31 +31,36 @@
         android:hint="PASSWORD"
         android:textColorHint="#f7f7f7"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="40dp"
         android:textColor="#f7f7f7"
         android:gravity="center_horizontal"
         android:singleLine="true"
         android:ellipsize="start"
-        android:layout_marginTop="270dp"
+        android:selectAllOnFocus="true"
+        android:phoneNumber="false"
+        android:password="false"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
     <ImageButton
         android:id="@+id/guestButton"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:onClick="loginGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/guest"
         android:contentDescription="guest button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp" />
+        android:layout_marginTop="94dp"
+        android:layout_below="@+id/enterButton"
+        android:layout_centerHorizontal="true" />
     <ImageButton
         android:id="@+id/enterButton"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:onClick="loginUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/enter"
         android:contentDescription="enter button"
+        android:layout_marginTop="79dp"
         android:layout_below="@+id/passwordField"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

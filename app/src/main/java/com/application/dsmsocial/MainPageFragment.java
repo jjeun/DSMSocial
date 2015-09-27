@@ -48,9 +48,12 @@ public class MainPageFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     // Inflate the fragment layout we defined above for this fragment
