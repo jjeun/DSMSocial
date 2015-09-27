@@ -4,9 +4,52 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.application.dsmsocial.confirmation">
+    tools:context="com.application.dsmsocial.AddCart"
+    android:background="@color/sliderBackground">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addView"
+        android:src="@drawable/check"
+        android:background="@color/sliderBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/thankyouText"
+        android:layout_marginBottom="25dp" />
+
+
+    <TextView
+        android:text="@string/thankyouText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/thankyouText"
+        android:textSize="20sp"
+        android:textColor="@color/barBackground"
+        android:padding="5dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/sliderBackground"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:text="@string/orderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderText"
+        android:textSize="20sp"
+        android:textColor="@color/barBackground"
+        android:padding="5dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/sliderBackground"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/thankyouText"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:id="@+id/continueButton"
+        android:layout_below="@+id/orderText"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/continue_button"
+        android:background="@color/sliderBackground"/>
 
 </RelativeLayout>

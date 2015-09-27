@@ -39,28 +39,39 @@
         <activity
             android:name=".AddCart"
             android:label="@string/title_activity_add_cart"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.application.dsmsocial.ShopActivity" />-->
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value="com.application.dsmsocial.ShopActivity" /> -->
         </activity>
         <activity
             android:name=".CartReview"
-            android:label="@string/title_activity_cart_review">
+            android:label="@string/title_activity_cart_review" >
             android:parentActivityName=".AddCart" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.AddCart" />
         </activity>
-
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value="com.application.dsmsocial.Login" />-->
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value="com.application.dsmsocial.Login" /> -->
         </activity>
+        <activity
+            android:name=".confirmation"
+            android:label="@string/title_activity_confirmation" >
+        </activity>
+
+        <activity
+            android:name=".Checkout"
+            android:label="@string/title_activity_checkout">
+        </activity>
+
     </application>
 
 </manifest>

@@ -8,5 +8,283 @@
 
     <!--<TextView android:text="@string/hello_world" android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
+    <TextView
+        android:id="@+id/cartItem"
+        android:text="@string/cartItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:textColor="@color/sliderFont"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:textSize="15sp"
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="15dp" />
+
+    <TextView
+        android:id="@+id/cartPrice"
+        android:text="@string/cartPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:textColor="@color/sliderFont"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/shopImage"
+        android:padding="15dp"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/cartItem"
+        android:layout_alignLeft="@+id/cartItem" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:text="@string/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/shopImage"
+        android:layout_alignTop="@+id/cartItem"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/itemName"
+        android:layout_toRightOf="@+id/shopImage"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/space"
+        android:text="@string/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/itemArtist"
+        android:layout_toRightOf="@+id/shopImage" />
+
+    <TextView
+        android:id="@+id/itemQuantity"
+        android:text="@string/itemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/mainBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/space"
+        android:layout_toRightOf="@+id/shopImage"
+        android:textSize="15sp"
+        android:layout_marginBottom="25dp" />
+
+    <TextView
+        android:id="@+id/billing"
+        android:text="@string/billing"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/barBackground"
+        android:textSize="20sp"
+        android:layout_below="@+id/shopImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:hint="NAME"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/billing"
+        android:layout_marginTop="25dp"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/street"
+        android:hint="STREET"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/name"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/townstate"
+        android:hint="TOWN, STATE"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/street"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/zipCode"
+        android:hint="ZIP CODE"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/townstate"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/cardinfo"
+        android:text="@string/card_info"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/barBackground"
+        android:textSize="20sp"
+        android:layout_below="@+id/zipCode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        />
+    <EditText
+        android:id="@+id/nameOnCard"
+        android:hint="NAME"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/cardinfo"
+        android:layout_marginTop="25dp"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/bank"
+        android:hint="BANK"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/nameOnCard"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/cardNumber"
+        android:hint="CARD #"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/bank"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/CVV"
+        android:hint="CVV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/cardNumber"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/shipping"
+        android:text="@string/shipping"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/barBackground"
+        android:textSize="20sp"
+        android:layout_below="@+id/CVV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp"
+        />
+
+    <EditText
+        android:id="@+id/nameShipping"
+        android:hint="NAME"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/shipping"
+        android:layout_marginTop="25dp"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/streetShipping"
+        android:hint="STREET"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/nameShipping"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/townstateShipping"
+        android:hint="TOWN, STATE"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/streetShipping"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/zipCodeShipping"
+        android:hint="ZIP CODE"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:textSize="17sp"
+        android:layout_below="@+id/townstateShipping"
+        android:singleLine="true"
+        />
+    <ImageButton
+        android:id="@+id/continueButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/continuebutton2"
+        android:layout_below="@+id/zipCodeShipping"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25sp"
+        />
 
 </RelativeLayout>
