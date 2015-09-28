@@ -82,7 +82,7 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem>{
                 dataList.addAll(data);
             } else {
                 for (ImageItem i : data) {
-                    if (i.getName().toLowerCase().contains(charText) || i.getType().toLowerCase().contains(charText) || i.getPrice().toLowerCase().contains(charText)) {
+                    if (i.getName().toLowerCase().contains(charText) || i.getPrice().toLowerCase().contains(charText) || i.getType().toLowerCase().contains(charText)){
                         dataList.add(i);
                     }
                 }

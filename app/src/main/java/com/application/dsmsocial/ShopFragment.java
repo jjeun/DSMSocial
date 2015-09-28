@@ -65,9 +65,10 @@ public class ShopFragment extends Fragment {
         TypedArray imgs = getResources().obtainTypedArray(R.array.shopImage);
         TypedArray name = getResources().obtainTypedArray(R.array.shopName);
         TypedArray price = getResources().obtainTypedArray(R.array.shopPrice);
+        TypedArray media = getResources().obtainTypedArray(R.array.shopMedia);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,null, name.getString(i), null, price.getString(i)));
+            imageItems.add(new ImageItem(bitmap,null, name.getString(i), media.getString(i), price.getString(i)));
         }
         return imageItems;
     }
@@ -95,7 +96,7 @@ public class ShopFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String query) {
-//                gridAdapter.filter(query, 1);
+                gridAdapter.filter(query, 1);
                 return false;
             }
         });

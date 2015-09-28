@@ -106,7 +106,7 @@
     </string-array>
 
     <string-array name="shopPrice">
-        <item>>80</item>
+        <item>80</item>
         <item>90</item>
         <item>50</item>
         <item>80</item>
@@ -139,6 +139,24 @@
         <item>Lyndsay Nissen</item>
         <item>Samantha Brown</item>
         <item>Eric Michael</item>
+    </string-array>
+
+    <string-array name="shopMedia">
+        <item>Painting</item>
+        <item>Painting</item>
+        <item>Painting</item>
+        <item>Sculpture</item>
+        <item>Sculpture</item>
+        <item>Painting</item>
+        <item>Painting</item>
+        <item>Painting</item>
+        <item>Painting</item>
+        <item>Photography</item>
+        <item>Painting</item>
+        <item>Photography</item>
+        <item>Painting</item>
+        <item>Jewelery</item>
+        <item>Sculpture</item>
     </string-array>
 
 
