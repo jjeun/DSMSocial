@@ -70,6 +70,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.application.dsmsocial.Login" />
         </activity>
+
+        <activity
+            android:name=".confirmation"
+            android:label="Confirmation"></activity>
+
     </application>
 
 </manifest>
