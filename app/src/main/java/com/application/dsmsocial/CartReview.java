@@ -2,8 +2,6 @@ package com.application.dsmsocial;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +18,6 @@ public class CartReview extends AppCompatActivity {
     private static final String TAG = "CartTag";
     String name;
     Bitmap image;
-    int page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,74 +26,30 @@ public class CartReview extends AppCompatActivity {
 
         name = getIntent().getStringExtra("name");
         image = getIntent().getParcelableExtra("image");
-        page = getIntent().getIntExtra("switch",0);
 
+        TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
+        titleTextView.setText(name);
 
-        if (page == 1){
+        ImageView imageView = (ImageView) findViewById(R.id.shopImage);
+        imageView.setImageBitmap(image);
 
-            TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
-            titleTextView.setText(name);
+        ImageButton mButton = (ImageButton) findViewById(R.id.deleteButton);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "cart button");
+                sendToDelete();
+            }
+        });
 
-            ImageView imageView = (ImageView) findViewById(R.id.shopImage);
-            imageView.setImageBitmap(image);
-
-            TextView cartItem = (TextView) findViewById(R.id.itemName);
-            cartItem.setText(null);
-
-            TextView quantity = (TextView) findViewById(R.id.itemQuantity);
-            quantity.setText(null);
-
-            View delete = findViewById(R.id.deleteButton);
-            delete.setVisibility(View.GONE);
-
-            TextView price = (TextView) findViewById(R.id.itemPrice);
-            price.setText("$0.00");
-
-            TextView total = (TextView) findViewById(R.id.total);
-            total.setText("$0.00");
-
-            TextView empty = (TextView) findViewById(R.id.space);
-            empty.setText("Cart Is Empty");
-            empty.setTextSize(30);
-
-
-            ImageButton returnButton = (ImageButton) findViewById(R.id.checkoutButton);
-            returnButton.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.continuebutton2));
-            returnButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.v(TAG, "return button");
-                    sendToMain();
-                }
-            });
-        }
-
-        else{
-
-            TextView titleTextView = (TextView) findViewById(R.id.itemArtist);
-            titleTextView.setText(name);
-
-            ImageView imageView = (ImageView) findViewById(R.id.shopImage);
-            imageView.setImageBitmap(image);
-
-            ImageButton mButton = (ImageButton) findViewById(R.id.deleteButton);
-            mButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.v(TAG, "cart button");
-                    sendToDelete();
-                }
-            });
-
-            ImageButton mButton2 = (ImageButton) findViewById(R.id.checkoutButton);
-            mButton2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.v(TAG, "cart button");
-                    sendToCheckout();
-                }
-            });
-        }
+        ImageButton mButton2 = (ImageButton) findViewById(R.id.checkoutButton);
+        mButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "cart button");
+                sendToCheckout();
+            }
+        });
     }
 
 
@@ -116,7 +69,6 @@ public class CartReview extends AppCompatActivity {
         intent.putExtra("name", name);
 
         startActivity(intent);
-
     }
 
 

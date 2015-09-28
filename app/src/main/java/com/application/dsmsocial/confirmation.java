@@ -1,9 +1,12 @@
 package com.application.dsmsocial;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class confirmation extends AppCompatActivity {
 
@@ -13,6 +16,13 @@ public class confirmation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+        (findViewById(R.id.menuButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(confirmation.this, MainPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

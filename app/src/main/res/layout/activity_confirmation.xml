@@ -46,10 +46,10 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="52dp"
-        android:id="@+id/continueButton"
+        android:id="@+id/menuButton"
         android:layout_below="@+id/orderText"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/continue_button"
+        android:src="@drawable/menu"
         android:background="@color/sliderBackground"/>
 
 </RelativeLayout>
