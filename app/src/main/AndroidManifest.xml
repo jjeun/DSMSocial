@@ -73,7 +73,9 @@
 
         <activity
             android:name=".confirmation"
-            android:label="Confirmation"></activity>
+            android:label="Confirmation">
+
+        </activity>
 
     </application>
 

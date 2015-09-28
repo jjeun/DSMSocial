@@ -34,10 +34,10 @@ public class MainPageFragment extends Fragment {
     int finalWidth;
 
     int[] resources = {
-            R.drawable.slideshow1,
-            R.drawable.slideshow2,
-            R.drawable.slideshow3,
-            R.drawable.slideshow4,
+            R.drawable.slide_show1,
+            R.drawable.slide_show2,
+            R.drawable.slide_show3,
+            R.drawable.slide_show4,
     };
 
     public static MainPageFragment newInstance(int page) {
