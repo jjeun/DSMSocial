@@ -89,7 +89,7 @@ public class ArtistFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String query) {
-                gridAdapter.filter(query.toLowerCase());
+                gridAdapter.filter(query);
                 return false;
             }
         });

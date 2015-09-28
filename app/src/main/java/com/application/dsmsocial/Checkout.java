@@ -71,8 +71,14 @@ public class Checkout extends AppCompatActivity {
             TextView street = (TextView) findViewById(R.id.street);
             TextView townstate = (TextView) findViewById(R.id.townstate);
             TextView zipCode = (TextView) findViewById(R.id.zipCode);
+            TextView emailA = (TextView) findViewById(R.id.email);
 
             TextView nameOnCard = (TextView) findViewById(R.id.nameOnCard);
+            TextView bank = (TextView) findViewById(R.id.bank);
+            TextView cardNumber = (TextView) findViewById(R.id.cardNumber);
+            TextView cardExp = (TextView) findViewById(R.id.cardExp);
+            TextView cardCVV = (TextView) findViewById(R.id.CVV);
+
             TextView nameShipping = (TextView) findViewById(R.id.nameShipping);
             TextView streetShipping = (TextView) findViewById(R.id.streetShipping);
             TextView townstateShipping = (TextView) findViewById(R.id.townstateShipping);
@@ -82,8 +88,14 @@ public class Checkout extends AppCompatActivity {
             street.setText(address);
             townstate.setText(city + ", " + state);
             zipCode.setText(zipcode);
+            emailA.setText(email);
 
             nameOnCard.setText(firstName + " " + lastName);
+            bank.setText("VISA");
+            cardNumber.setText("XXXX - XXXX - XXXX - 6789");
+            cardExp.setText("09/17");
+            cardCVV.setText("XXX");
+
             nameShipping.setText(firstName + " " + lastName);
             streetShipping.setText(address);
             townstateShipping.setText(city + ", " + state);
