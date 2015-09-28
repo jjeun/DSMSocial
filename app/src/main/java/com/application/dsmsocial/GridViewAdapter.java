@@ -48,7 +48,7 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem>{
             holder = (ViewHolder) row.getTag();
         }
 
-        ImageItem item = (ImageItem) data.get(position);
+        ImageItem item = dataList.get(position);
         holder.imageTitle.setText(item.getTitle());
         holder.image.setImageBitmap(item.getImage());
         return row;
@@ -60,15 +60,31 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem>{
     }
 
 
-    public void filter(String charText) {
+    public void filter(String charText, int num) {
         charText = charText.toLowerCase();
         dataList.clear();
-        if (charText.length() == 0) {
-            dataList.addAll(data);
-        } else {
-            for (ImageItem i : data) {
-                if (i.getName().toLowerCase().contains(charText)) {
-                    dataList.add(i);
+
+        if (num == 0)
+        {
+            if (charText.length() == 0) {
+                dataList.addAll(data);
+            } else {
+                for (ImageItem i : data) {
+                    if (i.getName().toLowerCase().contains(charText)||i.getType().toLowerCase().contains(charText)) {
+                        dataList.add(i);
+                    }
+                }
+            }
+        }
+
+        else{
+            if (charText.length() == 0) {
+                dataList.addAll(data);
+            } else {
+                for (ImageItem i : data) {
+                    if (i.getName().toLowerCase().contains(charText) || i.getType().toLowerCase().contains(charText) || i.getPrice().toLowerCase().contains(charText)) {
+                        dataList.add(i);
+                    }
                 }
             }
         }

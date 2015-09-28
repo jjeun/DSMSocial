@@ -9,11 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="@color/searchBackground"
-        android:id="@+id/searchView"
+        android:id="@+id/shopSearchView"
         android:layout_toLeftOf="@+id/shopCartButton"
         android:visibility="visible"
         android:iconifiedByDefault="false"
-        android:queryHint="Sort by..."/>
+        android:queryHint="Sort by media type, price, or artist"/>
 
     <ImageButton
         android:layout_width="66dp"

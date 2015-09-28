@@ -105,6 +105,24 @@
         <item>@drawable/shop15</item>
     </string-array>
 
+    <string-array name="shopPrice">
+        <item>>80</item>
+        <item>90</item>
+        <item>50</item>
+        <item>80</item>
+        <item>90</item>
+        <item>80</item>
+        <item>50</item>
+        <item>90</item>
+        <item>40</item>
+        <item>90</item>
+        <item>90</item>
+        <item>40</item>
+        <item>90</item>
+        <item>90</item>
+        <item>40</item>
+    </string-array>
+
     <string-array name="shopName">
         <item>Lyndsay Nissen</item>
         <item>Lyndsay Nissen</item>

@@ -59,7 +59,7 @@ public class ArtistFragment extends Fragment {
         TypedArray type = getResources().obtainTypedArray(R.array.artType);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i,-1));
-            imageItems.add(new ImageItem(bitmap, name.getString(i)+type.getString(i), name.getString(i), type.getString(i)));
+            imageItems.add(new ImageItem(bitmap, name.getString(i)+type.getString(i), name.getString(i), type.getString(i), null));
         }
         return imageItems;
     }
@@ -89,7 +89,7 @@ public class ArtistFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String query) {
-                gridAdapter.filter(query);
+                gridAdapter.filter(query, 0);
                 return false;
             }
         });

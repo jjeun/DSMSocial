@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class ShopFragment extends Fragment {
     String type;
     Bitmap image;
     int page;
+
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
@@ -62,9 +64,10 @@ public class ShopFragment extends Fragment {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
         TypedArray imgs = getResources().obtainTypedArray(R.array.shopImage);
         TypedArray name = getResources().obtainTypedArray(R.array.shopName);
+        TypedArray price = getResources().obtainTypedArray(R.array.shopPrice);
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,null, name.getString(i), null));
+            imageItems.add(new ImageItem(bitmap,null, name.getString(i), null, price.getString(i)));
         }
         return imageItems;
     }
@@ -80,6 +83,22 @@ public class ShopFragment extends Fragment {
         gridView = (GridView) rootView.findViewById(R.id.shopGridView);
         gridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
+
+        SearchView searchView;
+        searchView = (SearchView) rootView.findViewById(R.id.shopSearchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+//                gridAdapter.filter(query, 1);
+                return false;
+            }
+        });
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {

@@ -7,13 +7,15 @@ public class ImageItem {
     private String name;
     private String type;
     private String title;
+    private String price;
 
-    public ImageItem(Bitmap image, String title, String name, String type) {
+    public ImageItem(Bitmap image, String title, String name, String type, String price) {
         super();
         this.image = image;
         this.name = name;
         this.type = type;
         this.title = title;
+        this.price = price;
     }
 
     public Bitmap getImage() {
@@ -49,6 +51,19 @@ public class ImageItem {
     {
         this.title = title;
     }
+
+    public String getPrice() {
+
+        return price;
+    }
+
+    public void setPrice(String price)
+    {
+        this.price = price;
+    }
+
+
+
 
 
 }

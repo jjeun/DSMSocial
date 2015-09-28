@@ -96,7 +96,7 @@ public class ArtistActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            imageItems.add(new ImageItem(bitmap,null, name, null));
+            imageItems.add(new ImageItem(bitmap,null, name, null,null));
         }
         return imageItems;
     }
