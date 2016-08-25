@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/searchBackground"
+        android:id="@+id/searchView"
+        android:layout_toLeftOf="@+id/shopCartButton"
+        android:visibility="visible"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search by artist name or media type" />
+
+    <ImageButton
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:id="@+id/shopCartButton"
+        android:layout_gravity="right"
+        android:src="@drawable/cart"
+        android:background="@color/artistBackground"
+        android:scaleType="fitXY"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:visibility="visible" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/artistGridView"
+        android:layout_gravity="center"
+        android:numColumns="2"
+        android:gravity="center"
+        android:padding="40dp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp"
+        android:layout_marginTop="125dp">
+    </GridView>
+
+</RelativeLayout>
